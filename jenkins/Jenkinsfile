@@ -50,8 +50,8 @@ pipeline {
                 withCredentials([string(credentialsId: 'sonar-token', variable: 'SONAR_TOKEN')]) {
                     sh """
                         mvn sonar:sonar \
-                          -Dsonar.projectKey=${env.APP_NAME} \
-                          -Dsonar.projectName=${env.APP_NAME} \
+                          -Dsonar.projectKey=jenkenzo \
+                          -Dsonar.projectName=jenkenzo \
                           -Dsonar.host.url=${env.SONAR_HOST_URL} \
                           -Dsonar.token=${SONAR_TOKEN}
                     """
